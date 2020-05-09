@@ -6,4 +6,22 @@ This repo contains a OpenAI gym environment for simulating high school children 
 * React to hints that are given to the child by:
     * Quiting
     * Using new words for a new hint
-    * Finish the assignment and make the post test that is scored from 0 to 100
+    * Finish the assignment
+* Do the post-test
+
+
+
+## The children
+etc etc.
+
+## The pre test
+
+## Using words
+
+## Reacting to hints
+
+    ##Quiting
+    ##Using words
+    ##Finish assignment
+
+## The post test
