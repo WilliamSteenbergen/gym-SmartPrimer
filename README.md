@@ -20,8 +20,8 @@ etc etc.
 
 ## Reacting to hints
 
-###Quiting
-###Using words
-###Finish assignment
+### Quiting
+### Using words
+### Finish assignment
 
 ## The post test
