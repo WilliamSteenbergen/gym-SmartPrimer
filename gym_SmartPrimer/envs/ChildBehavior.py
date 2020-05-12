@@ -22,15 +22,15 @@ def react2hint(action, child):
 		reward = -2
 		done = True
 
-	info = {}
-	return reward, done, info
+	return reward, done
 
 def nextObservation(observation_space, child):
+	#the new words
 	newWordOHE = [0,0,0,0]
 	newWordOHE[child.hints[child.neededHint]] = 1
 
-	#THIS IS WHERE I WAS LEFT
-	nextObs = 1 #change this for new session
+	#The new previous questions
+	prev_q = observation_space[-3:-1]
 
-
+	nextObs = np.array([child.pre_score]+newWordOHE+prev_q)
 	return nextObs

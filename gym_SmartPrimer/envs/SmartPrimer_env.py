@@ -32,7 +32,7 @@ class SmartPrimerEnv(gym.Env):
 		self.child = Child(np.random.uniform(0, self.nHints), self.hints)
 
 		low = np.array((0,0,0,0,0,0,0,0), dtype=int) #pre-test, 4 words, 3 prev-hints
-		high = np.array((10,1,1,1,1,1,1,1), dtype=int) #pre-test, 4 words, 3 prev-hints
+		high = np.array((2,1,1,1,1,1,1,1), dtype=int) #pre-test, 4 words, 3 prev-hints
 
 		self.observation_space = spaces.Box(low, high, dtype=np.int64)
 		self.action_space = spaces.Discrete(4)  # action space at start is all actions, but this actions space changes
@@ -40,10 +40,10 @@ class SmartPrimerEnv(gym.Env):
 	def step(self, action):
 		self.prev_hint = action
 
-		reward, done, info = ChildBehavior.react2hint(action, self.child)
+		reward, done = ChildBehavior.react2hint(action, self.child)
 		next_obs = ChildBehavior.nextObservation(self.observation_space, self.child)
 
-
+		info = {}
 		return next_obs, reward, done, info
 
 
@@ -56,5 +56,4 @@ class SmartPrimerEnv(gym.Env):
 	def render(self, mode='human'):
 		print('Did one step')
 
-	def close(self):
-		...
+	#def close(self):
