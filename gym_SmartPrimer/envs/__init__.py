@@ -1,2 +1,2 @@
-from gym_foo.envs.foo_env import FooEnv
-from gym_foo.envs.foo_extrahard_env import FooExtraHardEnv
+from gym_SmartPrimer.envs.SmartPrimer_env import SmartPrimerEnv
+#from gym_SmartPrimer.envs.SmartPrimer_extrahard_env import SmartPrimerExtraHardEnv

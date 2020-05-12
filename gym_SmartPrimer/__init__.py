@@ -1,10 +1,10 @@
 from gym.envs.registration import register
 
 register(
-    id='foo-v0',
-    entry_point='gym_foo.envs:FooEnv',
+    id='SmartPrimer-v0',
+    entry_point='gym_SmartPrimer.envs:SmartPrimer',
 )
 register(
-    id='foo-extrahard-v0',
-    entry_point='gym_foo.envs:FooExtraHardEnv',
+    id='SmartPrimer-extrahard-v0',
+    entry_point='gym_SmartPrimer.envs:SmartPrimerExtraHardEnv',
 )
