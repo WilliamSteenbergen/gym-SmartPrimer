@@ -3,7 +3,7 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 from gym_SmartPrimer.envs.ChildClass import Child
 import numpy as np
-import gym_SmartPrimer.envs.ChildBehavior as ChildBehavior
+from gym_SmartPrimer.envs import ChildBehavior
 
 class SmartPrimerEnv(gym.Env):
 	""" Smart primer environment that simulates children trying to solve a geometry problem """
