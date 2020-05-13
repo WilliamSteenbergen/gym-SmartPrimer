@@ -2,8 +2,6 @@ import numpy as np
 
 class Child:
 	def __init__(self, type, hints):
-		np.random.seed(type)
-
 		self.type = type #type is from not smart -> smart
 		self.hints = hints[type]
 
@@ -17,10 +15,11 @@ class Child:
 			pre_score = 2
 
 		#init words 3 type of words can be used
-		words = [0] * 4  # initializing
-		prev_hints = [0] * 3 #initializing 4 previous hints
+		words = [0,0,0,0]  # initializing
+		prev_hints = [0,0,0] #initializing 4 previous hints
 
 		self.pre_score = pre_score
-		self.info = words + prev_hints #0s are for previous hints
+		self.words = words
 		self.neededHint = 0
 		self.wrongHints = 0
+		self.prev_q = prev_hints
