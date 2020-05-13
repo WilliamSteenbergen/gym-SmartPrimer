@@ -11,7 +11,8 @@ class SmartPrimerEnv(gym.Env):
 	metadata = {'render.modes': ['human']}
 
 	def __init__(self):
-		info = {}
+		self.env = {}
+		self.info = {}
 		self.i = 0
 		self.hints = [
 		[0, 1, 2, 3],
@@ -36,10 +37,10 @@ class SmartPrimerEnv(gym.Env):
 
 		self.nHints = len(self.hints)
 
-		low = np.array((0,0,0,0,0,0,0,0), dtype=int) #pre-test, 4 words, 3 prev-hints
-		high = np.array((2,1,1,1,1,1,1,1), dtype=int) #pre-test, 4 words, 3 prev-hints
+		low = np.array((0,0,0,0,0,0,0,0), dtype=float) #pre-test, 4 words, 3 prev-hints
+		high = np.array((2,1,1,1,1,1,1,1), dtype=float) #pre-test, 4 words, 3 prev-hints
 
-		self.observation_space = spaces.Box(low, high, dtype=np.int64)
+		self.observation_space = spaces.Box(low, high, dtype=np.float)
 		self.action_space = spaces.Discrete(4)  # action space at start is all actions, but this actions space changes
 		self.reward_range = (-2, 1)
 
@@ -60,8 +61,8 @@ class SmartPrimerEnv(gym.Env):
 			performance = self.avgRewardsPerChild[-min(len(self.avgRewardsPerChild), 100):]
 			self.performance.append(np.mean(performance))
 
-		info = {'avgRewardsPerChild': self.avgRewardsPerChild, 'Performance': self.performance}
-		return self.state, reward, done, info
+		self.info = {'avgRewardsPerChild': self.avgRewardsPerChild, 'Performance': self.performance}
+		return self.state, reward, done, self.info
 
 
 	def reset(self):
@@ -73,7 +74,7 @@ class SmartPrimerEnv(gym.Env):
 
 		newWordOHE = [0,0,0,0]
 		newWordOHE[self.child.hints[self.child.neededHint]] = 1
-		self.state = np.array([self.child.pre_score] + newWordOHE + [0,0,0])
+		self.state = np.array([self.child.pre_score] + newWordOHE + [0,0,0], dtype = np.float)
 		return self.state
 
 
