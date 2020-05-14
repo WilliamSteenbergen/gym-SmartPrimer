@@ -38,7 +38,7 @@ class SmartPrimerHardEnv(gym.Env):
 		self.nHints = len(self.hints)
 
 		low = np.array((0,-2,-2,-2,-2,0,0,0), dtype=float) #pre-test, 4 words dim, 3 prev-hints
-		high = np.array((2,2,2,2,2,1,1,1), dtype=float) #pre-test, 4 words dim, 3 prev-hints
+		high = np.array((9,2,2,2,2,1,1,1), dtype=float) #pre-test, 4 words dim, 3 prev-hints
 
 		self.observation_space = spaces.Box(low, high, dtype=np.float)
 		self.action_space = spaces.Discrete(4)  # action space at start is all actions, but this actions space changes

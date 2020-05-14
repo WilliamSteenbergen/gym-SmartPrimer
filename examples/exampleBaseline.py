@@ -3,9 +3,9 @@ import numpy as np
 import gym_SmartPrimer.agents.linBaseline as Baseline
 import matplotlib.pyplot as plt
 
-np.random.seed(1)
+np.random.seed(2)
 
-env = gym.make('gym_SmartPrimer:SmartPrimer-medium-v0')
+env = gym.make('gym_SmartPrimer:SmartPrimer-realistic-v0')
 agent = Baseline.BaselineAgent(env.action_space)
 
 

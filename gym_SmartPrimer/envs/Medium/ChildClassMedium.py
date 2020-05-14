@@ -7,7 +7,7 @@ class Child:
 
 		#age = [9 + type * (11-9)/nHints + np.random.normal(means['Age'], stds['Age'])] #ranges from around 9 to 11 +- N(mean,std)
 		#grade = [round(3 + type * (6-3)/nHints + np.random.normal(means['Grade'], stds['Grade']))] #ranges from around grade 3 to 6 +- N(means, grade)
-		if np.random.binomial(1, 0.9)==1:
+		if np.random.binomial(1, 0.7)==1:
 			if self.type <= 7:
 				pre_score = 0
 			elif self.type <= 11:

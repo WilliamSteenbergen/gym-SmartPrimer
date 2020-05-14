@@ -1,7 +1,7 @@
 from gym.envs.registration import register
 
 register(
-    id='SmartPrimer-v0',
+    id='SmartPrimer-deterministic-v0',
     entry_point='gym_SmartPrimer.envs.Deterministic:SmartPrimerEnv',
 )
 register(

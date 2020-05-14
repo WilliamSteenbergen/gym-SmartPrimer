@@ -4,25 +4,38 @@ import numpy as np
 def react2hint(action, child):
 	done = False
 
+	reward = 0
+	penalty = 1
+	potential = 9 - child.pre_score  # 9 is max score
+
+
 	if action == child.hints[child.neededHint]: #if we gave the correct hint
 		child.neededHint += 1
+		child.correctHints += 1
 
-		if np.random.binomial(1,1) == 1:
-			reward = 1
-		else:
-			reward = -0.5
 	else:
 		child.wrongHints += 1
-		if np.random.binomial(1,1) == 1:
-			reward = -0.5
-		else:
-			reward = 1
 
-	if child.wrongHints >=2 and np.random.binomial(1,1) == 1:
+	if child.wrongHints >= 2 and np.random.binomial(1, 0.5) == 1:
+		# if we've given all hints that the child needs, we achieve potential minus a penalty for wrong hints
+		improvement = child.correctHints / len(child.hints) * potential
+		improvement -= penalty * child.wrongHints
+
+		improvement += np.random.normal(0,
+		                                0 * potential / 10)  # add random element to improvement, with std dependent on potential
+
 		reward = -2
 		done = True
 
-	elif action >= child.hints[-1]: #if we gave a new hint more or equal to needed
+	elif action >= child.hints[-1]: #if we gave a new hint more or equal to needed, the child does the post-test
+		# if we've given all hints that the child needs, we achieve potential minus a penalty for wrong hints
+		improvement = child.correctHints / len(child.hints) * potential
+		improvement -= penalty * child.wrongHints
+
+		improvement += np.random.normal(0,
+		                                0 * potential / 10)  # add random element to improvement, with std dependent on potential
+
+		reward = improvement
 		done = True
 
 	if action != 3: #if we did not give the last hint, otherwise it doesn't matter

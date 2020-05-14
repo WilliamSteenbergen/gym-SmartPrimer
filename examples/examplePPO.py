@@ -21,7 +21,7 @@ with open(agent_config_path, 'rt') as fp:
 
 env = OpenAIGymEnv.from_spec({
         "type": "openai",
-        "gym_env": 'gym_SmartPrimer:SmartPrimer-medium-v0'
+        "gym_env": 'gym_SmartPrimer:SmartPrimer-realistic-v0'
     })
 
 agent = Agent.from_spec(
