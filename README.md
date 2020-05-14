@@ -22,7 +22,7 @@ The simulation is done by simulating the following tasks
 In this simulation, the agent can give out 4 different actions, and thus the action space is 4 dimensional. It is always
 favorable for an agent to not give the same child two of the same hints sequentially. This given fact is not in the
 simulation (the action space is not dynamic), and thus should be reflected in the agent's behavior. For example, use
-[PPO for SmartPrimer](gym-SmartPrimer/gym_SmartPrimer/agents/ppo_agentSmartPrimer.py) for an adapted version of the PPO
+[PPO for SmartPrimer](gym_SmartPrimer/agents/ppo_agentSmartPrimer.py) for an adapted version of the PPO
 algorithm.
 
 ## The children
