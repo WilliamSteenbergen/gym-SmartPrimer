@@ -16,6 +16,14 @@ The simulation is done by simulating the following tasks
     * Finish the assignment
 * Do the post-test
 
+There are three different environments in the current repository: [Deterministic](gym_SmartPrimer/envs/Deterministic), [Medium](gym_SmartPrimer/envs/Medium) and
+[Realistic/Hard](gym_SmartPrimer/envs/Realistic_Hard).
+
+One can run any of these environments by 'pip install -e gym-SmartPrimer' and then running the following line:
+
+'gym.make('gym_SmartPrimer:SmartPrimer-v0')' (for deterministic)
+'gym.make('gym_SmartPrimer:SmartPrimer-Medium-v0')' (for medium)
+'gym.make('gym_SmartPrimer:SmartPrimer-Realistic_Hard-v0')' (for realistic/hard)
 
 ## The RL situation
 ### The action space
@@ -24,6 +32,15 @@ favorable for an agent to not give the same child two of the same hints sequenti
 simulation (the action space is not dynamic), and thus should be reflected in the agent's behavior. For example, use
 [PPO for SmartPrimer](gym_SmartPrimer/agents/ppo_agentSmartPrimer.py) for an adapted version of the PPO
 algorithm.
+
+### The state space
+The state space is encoded by three elements:
+* The pre-test score
+* Words used between the last hint and the current time point
+* Previously given hints
+
+### The rewards
+
 
 ## The children
 Every episode in the simulation is a different child. A child is generated as following:
