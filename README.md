@@ -1,6 +1,13 @@
 # Smartprimer simulation environment
 
-This repo contains a OpenAI gym environment for simulating high school children doing the follow tasks:
+This repository contains an OpenAI gym environment for simulating high school children that try to solve a problem and
+learn a task. The goal of an algorithm in this simulation is to generate hints for the child that correspond to the
+hints the child needs. The children will react to hints with words, or will finish or quit the exercise. Before the
+children start the exercise, the will make a pre-test. After the children are finished, they make a post-test. The
+performance of the algorithm is determined by the average difference between the post-test and pre-test.
+
+
+The simulation is done by simulating the following tasks
 * Doing a pre-test that is scored from 0 to 100
 * Use words that correspond to the hint that the child needs
 * React to hints that are given to the child by:
@@ -10,6 +17,13 @@ This repo contains a OpenAI gym environment for simulating high school children 
 * Do the post-test
 
 
+## The RL situation
+### The action space
+In this simulation, the agent can give out 4 different actions, and thus the action space is 4 dimensional. It is always
+favorable for an agent to not give the same child two of the same hints sequentially. This given fact is not in the
+simulation (the action space is not dynamic), and thus should be reflected in the agent's behavior. For example, use
+[PPO for SmartPrimer](gym-SmartPrimer/gym_SmartPrimer/agents/ppo_agentSmartPrimer.py) for an adapted version of the PPO
+algorithm.
 
 ## The children
 Every episode in the simulation is a different child. A child is generated as following:
