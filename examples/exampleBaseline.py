@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 np.random.seed(1)
 
-env = gym.make('gym_SmartPrimer:SmartPrimer-v0')
+env = gym.make('gym_SmartPrimer:SmartPrimer-medium-v0')
 agent = Baseline.BaselineAgent(env.action_space)
 
 
@@ -25,5 +25,5 @@ for i in range(episode_count):
 			agent.reset()
 			break
 
-plt.plot(info['Performance'])
-plt.show()
+#make the performance plot
+env.render()

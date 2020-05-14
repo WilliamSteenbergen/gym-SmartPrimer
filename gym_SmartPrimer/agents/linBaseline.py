@@ -1,5 +1,5 @@
 class BaselineAgent(object):
-	"""The world's simplest agent!"""
+	"""Linear baseline agent that increases hints"""
 	def __init__(self, action_space):
 		self.action_space = action_space
 		self.prevAction = -1

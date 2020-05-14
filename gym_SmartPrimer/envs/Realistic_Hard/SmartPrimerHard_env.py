@@ -1,19 +1,19 @@
 import gym
-from gym import error, spaces, utils
-from gym.utils import seeding
-from gym_SmartPrimer.envs.ChildClass import Child
+from gym import spaces
+from gym_SmartPrimer.envs.Realistic_Hard.ChildClassHard  import Child
 import numpy as np
-from gym_SmartPrimer.envs import ChildBehavior
+from gym_SmartPrimer.envs.Realistic_Hard import ChildBehaviorHard
+import matplotlib.pyplot as plt
 
-class SmartPrimerEnv(gym.Env):
-	""" Smart primer environment that simulates children trying to solve a geometry problem """
+class SmartPrimerHardEnv(gym.Env):
+	""" Realistic Smart primer environment that simulates children trying to solve a geometry problem """
 
 	metadata = {'render.modes': ['human']}
 
 	def __init__(self):
 		self.env = {}
 		self.info = {}
-		self.i = 0
+		#self.i = 0
 		self.hints = [
 		[0, 1, 2, 3],
 		[0, 1, 3],
@@ -37,8 +37,8 @@ class SmartPrimerEnv(gym.Env):
 
 		self.nHints = len(self.hints)
 
-		low = np.array((0,0,0,0,0,0,0,0), dtype=float) #pre-test, 4 words, 3 prev-hints
-		high = np.array((2,1,1,1,1,1,1,1), dtype=float) #pre-test, 4 words, 3 prev-hints
+		low = np.array((0,-2,-2,-2,-2,0,0,0), dtype=float) #pre-test, 4 words dim, 3 prev-hints
+		high = np.array((2,2,2,2,2,1,1,1), dtype=float) #pre-test, 4 words dim, 3 prev-hints
 
 		self.observation_space = spaces.Box(low, high, dtype=np.float)
 		self.action_space = spaces.Discrete(4)  # action space at start is all actions, but this actions space changes
@@ -49,10 +49,10 @@ class SmartPrimerEnv(gym.Env):
 	def step(self, action):
 		self.prev_hint = action
 
-		reward, done = ChildBehavior.react2hint(action, self.child)
+		reward, done = ChildBehaviorHard.react2hint(action, self.child)
 
 		if not done:
-			self.state = ChildBehavior.nextObservation(self.state, self.child)
+			self.state = ChildBehaviorHard.nextObservation(self.state, self.child)
 
 		self.childRewards.append(reward)
 
@@ -66,19 +66,16 @@ class SmartPrimerEnv(gym.Env):
 
 
 	def reset(self):
-		self.i +=1
+		#self.i +=1
 
-		#self.action_space = spaces.Discrete(4)  # action space at start is all actions
 		self.child = Child(np.random.randint(0, self.nHints), self.hints)  # create a child of random type
 		self.childRewards = []
 
-		newWordOHE = [0,0,0,0]
-		newWordOHE[self.child.hints[self.child.neededHint]] = 1
-		self.state = np.array([self.child.pre_score] + newWordOHE + [0,0,0], dtype = np.float)
+		self.state = ChildBehaviorHard.nextObservation(self.observation_space, self.child)
 		return self.state
 
-
 	def render(self, mode='human'):
-		print('Did one step')
+		plt.plot(self.info['Performance'])
+		plt.show()
 
-	#def close(self):
+

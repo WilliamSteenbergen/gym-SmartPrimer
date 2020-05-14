@@ -1,0 +1,1 @@
+from gym_SmartPrimer.envs.Deterministic.SmartPrimer_env import SmartPrimerEnv
