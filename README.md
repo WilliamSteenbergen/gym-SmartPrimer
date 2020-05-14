@@ -19,11 +19,11 @@ The simulation is done by simulating the following tasks
 There are three different environments in the current repository: [Deterministic](gym_SmartPrimer/envs/Deterministic), [Medium](gym_SmartPrimer/envs/Medium) and
 [Realistic/Hard](gym_SmartPrimer/envs/Realistic_Hard).
 
-One can run any of these environments by 'pip install -e gym-SmartPrimer' and then running the following line:
+One can run any of these environments by `pip install -e gym-SmartPrimer` and then running the following line:
 
-'gym.make('gym_SmartPrimer:SmartPrimer-v0')' (for deterministic)
-'gym.make('gym_SmartPrimer:SmartPrimer-Medium-v0')' (for medium)
-'gym.make('gym_SmartPrimer:SmartPrimer-Realistic_Hard-v0')' (for realistic/hard)
+`gym.make('gym_SmartPrimer:SmartPrimer-v0')` (for deterministic)
+`gym.make('gym_SmartPrimer:SmartPrimer-Medium-v0')` (for medium)
+`gym.make('gym_SmartPrimer:SmartPrimer-Realistic_Hard-v0')` (for realistic/hard)
 
 ## The RL situation
 ### The action space
