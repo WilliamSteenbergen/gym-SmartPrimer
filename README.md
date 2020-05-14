@@ -145,7 +145,8 @@ When the child quits or finishes the assignment, it starts making the post-test.
 
 In the realistic scenario, the post-test result is defined by it's improvement over the pre-test, and works as following:
 
-First we define the potential improvement, $Pot = score<sub>max</sub> - score<sub>pre</sub>$. $score<sub>max</sub>$ is $9$ in this case. The improvement
-will then be defined as: N<sub>correct</sub> / N<sub>needed</sub> * Pot - λ* N<sub>wrong</sub> + ε$. $N<sub>correct</sub>$ is the number of times we gave
-the needed hint, $N<sub>needed</sub>$ is the number of hints a child needs, $λ=1$ is a penalty factor and $ε~N(0,Pot/10)$, a
+First we define the potential improvement, Pot = score<sub>max</sub> - score<sub>pre</sub>. score<sub>max</sub> is 9 in this case. The improvement
+will then be defined as: N<sub>correct</sub> / N<sub>needed</sub> * Pot - λ* N<sub>wrong</sub> + ε.
+
+N<sub>correct</sub> is the number of times we gave the needed hint, N<sub>needed</sub> is the number of hints a child needs, λ=1 is a penalty factor and $ε~N(0,Pot/10)$, a
 random element that has a higher variance if the potential is higher.
