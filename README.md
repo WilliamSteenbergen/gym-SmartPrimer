@@ -48,6 +48,8 @@ on the difference between the hints children need and the hints we give. Dependi
 'known' after every hint (deterministic and medium), or only after the child makes the post-test (realistic/hard). See
 the bottom of this document for more details.
 
+![overview](Overview.png)
+
 
 ## The children
 Every episode in the simulation is a different child. A child is generated as following:
