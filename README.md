@@ -12,7 +12,13 @@ This repo contains a OpenAI gym environment for simulating high school children 
 
 
 ## The children
-etc etc.
+Every episode in the simulation is a different child. A child is generated as following:
+
+First, we generate a random number between 0 and 14. This will be the child's 'type'. The child's type
+determines what hints the child needs:
+
+
+
 
 ## The pre test
 
