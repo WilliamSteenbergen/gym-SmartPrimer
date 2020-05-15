@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 np.random.seed(2)
 
-env = gym.make('gym_SmartPrimer:SmartPrimer-realistic-v0')
+env = gym.make('gym_Smart-Primer:SmartPrimer-realistic-v0')
 agent = Baseline.BaselineAgent(env.action_space)
 
 

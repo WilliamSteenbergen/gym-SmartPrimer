@@ -19,8 +19,7 @@ The simulation is done by simulating the following tasks
 There are three different environments in the current repository: [Deterministic](gym_SmartPrimer/envs/Deterministic), [Medium](gym_SmartPrimer/envs/Medium) and
 [Realistic/Hard](gym_SmartPrimer/envs/Realistic_Hard).
 
-One can run any of these environments by first installing, `pip install -e gym-SmartPrimer` and then loading the gym
-environment by running the following line:
+One can run any of these environments by cloning this repo and then loading the environment with:
 
 `gym.make('gym_SmartPrimer:SmartPrimer-deterministic-v0')` (for deterministic)
 
