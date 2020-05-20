@@ -27,13 +27,13 @@
   [
     {
       "type": "dense",
-      "units": 32,
+      "units": 64,
       "activation": "tanh",
       "scope": "hidden1"
     },
     {
       "type": "dense",
-      "units": 32,
+      "units": 64,
       "activation": "tanh",
       "scope": "hidden2"
     }
@@ -42,13 +42,13 @@
   [
     {
       "type": "dense",
-      "units": 32,
+      "units": 64,
       "activation": "tanh",
       "scope": "vf-hidden1"
     },
     {
       "type": "dense",
-      "units": 32,
+      "units": 64,
       "activation": "tanh",
       "scope": "vf-hidden2"
     }

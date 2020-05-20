@@ -22,7 +22,7 @@ def react2hint(action, child):
 		improvement -= penalty * child.wrongHints
 
 		improvement += np.random.normal(0,
-		                                0 * potential / 10)  # add random element to improvement, with std dependent on potential
+		                                 potential / 10)  # add random element to improvement, with std dependent on potential
 
 		reward = -2
 		done = True
@@ -33,7 +33,7 @@ def react2hint(action, child):
 		improvement -= penalty * child.wrongHints
 
 		improvement += np.random.normal(0,
-		                                0 * potential / 10)  # add random element to improvement, with std dependent on potential
+		                                potential / 10)  # add random element to improvement, with std dependent on potential
 
 		reward = improvement
 		done = True
@@ -47,7 +47,12 @@ def nextObservation(observation_space, child):
 	#the new words
 	newWordW2V = [-2, -2, -2, -2]
 
-	newWordW2V[child.hints[child.neededHint]] = 2
+
+	for i in range(0, len(newWordW2V)):
+		if i == child.hints[child.neededHint]:
+			newWordW2V[i] = min(2, np.random.normal(1,1))
+		else:
+			newWordW2V[i] = min(2, max(-2, np.random.normal(-1, 1)))
 
 
 	#The new previous questions

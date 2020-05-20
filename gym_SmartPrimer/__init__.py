@@ -12,3 +12,7 @@ register(
     id='SmartPrimer-realistic-v0',
     entry_point='gym_SmartPrimer.envs:SmartPrimerHardEnv',
 )
+register(
+    id='SmartPrimer-dynamic-v0',
+    entry_point='gym_SmartPrimer.envs:SmartPrimerDynamicEnv',
+)
