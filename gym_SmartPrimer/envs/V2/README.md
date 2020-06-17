@@ -23,15 +23,15 @@ Before every moment the bot has to decide an action, the observation space is up
 
 ### Reward
 The reward is currently defined as the post-pre score, unless the child quits, the reward then is -2. The post
-test result is calculated in this [file](gym_SmartPrimer/envs/V2/Realistic/ChildBehavior.py).
+test result is calculated in this [file](Realistic/ChildBehavior.py).
 
 The child will do the post-test if he/she finished the fourth sub-question. A child finishes a sub-question when his number of needed hints is 0, the number of needed encouragements is 0
 and the number of needed timesteps is 0. How many hints/encouragements/seconds a child needs can be customly defined (see 'how to use').
 
 ## How to use
-First clone the repo. See [example baseline](gym_SmartPrimer/examples/exampleBaseline.py) and [example PPO](gym_SmartPrimer/examples/examplePPO.py) for examples of how to use the enviornment.
+First clone the repo. See [example baseline](../../examples/exampleBaseline.py) and [example PPO](gym_SmartPrimer/examples/examplePPO.py) for examples of how to use the enviornment.
 
-You can set the types of children by editing the [children config file](gym_SmartPrimer/envs/V2/Realistic/childConfig.json). The parameters in this file are defined to be the following:
+You can set the types of children by editing the [children config file](Realistic/childConfig.json). The parameters in this file are defined to be the following:
 
 * nTypes: The number of different types of children you want to create (int)
 * meanAge: The mean age of the child (list of int, size nTypes). Std used for simulation is 1.
