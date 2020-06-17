@@ -16,16 +16,26 @@ The simulation is done by simulating the following tasks
     * Finish the assignment
 * Do the post-test
 
-There are three different environments in the current repository: [Deterministic](gym_SmartPrimer/envs/Deterministic), [Medium](gym_SmartPrimer/envs/Medium) and
-[Realistic/Hard](gym_SmartPrimer/envs/Realistic_Hard).
+There are four different environments in V1, and one in V2. It is recommended to work with the V2.
 
-NOTE: pip installation is work in progress.
 
 One can run any of these environments by cloning this repo and then loading the environment with:
 
-`gym.make('gym_SmartPrimer:SmartPrimer-deterministic-v0')` (for deterministic)
+####For V1:
 
-`gym.make('gym_SmartPrimer:SmartPrimer-medium-v0')` (for medium)
+`gym.make('gym_SmartPrimer:SmartPrimer-deterministic-v1')` (for deterministic)
 
-`gym.make('gym_SmartPrimer:SmartPrimer-realistic-v0')` (for realistic/hard)
+`gym.make('gym_SmartPrimer:SmartPrimer-medium-v1')` (for medium)
+
+`gym.make('gym_SmartPrimer:SmartPrimer-realistic-v1')` (for realistic/hard)
+
+`gym.make('gym_SmartPrimer:SmartPrimer-dynamic-v1')` (for realistic/dynamic children)
+
+####For V2:
+
+`gym.make('gym_SmartPrimer:SmartPrimer-realistic-v2')` (for realistic/dynamic children)
+
+See the documentation for V1 [here](gym_SmartPrimer/envs/V1/README.md) and for V2 [here](gym_SmartPrimer/envs/V2/README.md).
+
+
 

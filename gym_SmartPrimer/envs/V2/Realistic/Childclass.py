@@ -30,7 +30,7 @@ class Child:
 
 		self.preScore = min(max(info['meanPreScore'][type] + np.random.randint(-2, 2), 0), 10)
 
-		self.neededHints = min(max(info['meanNeededHints'][type] + round(np.random.normal(0, 1)), 0), 4)
+		self.neededHints = min(max(info['meanNeededHints'][type] + round(np.random.normal(0, 0.5)), 0), 4)
 
 		self.anxiety = info['meanAnxietyScore'][type] + round(np.random.normal(0, 2))
 

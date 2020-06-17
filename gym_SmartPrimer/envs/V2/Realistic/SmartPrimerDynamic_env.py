@@ -14,6 +14,7 @@ class SmartPrimerDynamicEnv(gym.Env):
 	metadata = {'render.modes': ['human']}
 
 	def __init__(self):
+		'''Initializes the environment'''
 		with open(os.path.abspath(os.path.join(os.path.dirname( __file__ ), 'childConfig.json'))) as config_file:
 			self.settings = json.load(config_file)
 
@@ -52,6 +53,7 @@ class SmartPrimerDynamicEnv(gym.Env):
 		self.reset()
 
 	def step(self, action):
+		'''Takes an action and return the new statespace, reward, whether the episode has ended and some performance info'''
 		self.getInfo(action)
 
 		# the needed time for a child will decrease with one.
@@ -89,6 +91,7 @@ class SmartPrimerDynamicEnv(gym.Env):
 		return self.state, reward, done, self.info
 
 	def getInfo(self, actionTaken):
+		'''Retreives performance measures for plotting'''
 		kids = range(0, self.settings['nTypes'])
 		actions = [0, 1, 2, 3]
 
@@ -116,6 +119,7 @@ class SmartPrimerDynamicEnv(gym.Env):
 
 
 	def reset(self):
+		'''Starts a new episode by creating a new child and resetting performance, stage, observation space.'''
 		self.childrenSimulated += 1
 		if self.childrenSimulated % 50 == 0:
 			print('We simulated {} children'.format(self.childrenSimulated))
@@ -131,6 +135,7 @@ class SmartPrimerDynamicEnv(gym.Env):
 		return self.state
 
 	def render(self, mode='human'):
+		'''Creates plots of the results'''
 		ax1 = plt.subplot(311)
 		# ax1.set_title('Scenario 4: average reward of last 100 children without quitting penalty')
 		ax1.margins(0.05)
