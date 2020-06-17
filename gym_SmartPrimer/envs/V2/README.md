@@ -53,3 +53,9 @@ To use, you first create the environment:
 ```env = gym.make('gym_SmartPrimer:SmartPrimer-realistic-v2')```
 
 Then, define the agent. For example for the baseline you can use:
+
+```import gym_SmartPrimer.agents.baselineV2 as Baseline```
+```agent = Baseline.BaselineAgent(env.action_space)```
+
+Then you can make a step by using ```env.step(action)```, where you can define action as being the action determined by 
+the agent: ```action = agent.act(ob, reward, done)```. Action should be an integer between 0 and 3. 
