@@ -1,4 +1,4 @@
-#Version 1
+# Version 1
 ## The RL situation
 ### The action space
 In this simulation, the agent can give out 4 different actions, and thus the action space is 4 dimensional. It is always
@@ -88,13 +88,13 @@ and the current time point.
 
 In the deterministic environment, all elements in the vector are -2, except for the element corresponding to the hint
 that the child needs at that moment, this will be 2. So for example, when a child needs hint 2, the word representation will be
-$[-2, -2, 2, -2]$. Pay attention to the 0 indexing here.
+[-2, -2, 2, -2]. Pay attention to the 0 indexing here.
 
-In the medium environment, all elements in the list are $~N(-2,1)$, except for the hint that is needed, this has distribution
-$N(2,1)$.
+In the medium environment, all elements in the list are ~N(-2,1), except for the hint that is needed, this has distribution
+N(2,1).
 
-In the realistic/hard environment, all elements in the list are $~N(-1,1)$, except for the hint that is needed, this has distribution
-$N(1,1)$.
+In the realistic/hard environment, all elements in the list are ~N(-1,1), except for the hint that is needed, this has distribution
+N(1,1).
 
 
 ## Reacting to hints
@@ -121,5 +121,5 @@ In the realistic scenario, the post-test result is defined by it's improvement o
 First we define the potential improvement, Pot = score<sub>max</sub> - score<sub>pre</sub>. score<sub>max</sub> is 9 in this case. The improvement
 will then be defined as: N<sub>correct</sub> / N<sub>needed</sub> * Pot - λ* N<sub>wrong</sub> + ε.
 
-N<sub>correct</sub> is the number of times we gave the needed hint, N<sub>needed</sub> is the number of hints a child needs, λ=1 is a penalty factor and $ε~N(0,Pot/10)$, a
+N<sub>correct</sub> is the number of times we gave the needed hint, N<sub>needed</sub> is the number of hints a child needs, λ=1 is a penalty factor and ε~N(0,Pot/10), a
 random element that has a higher variance if the potential is higher.

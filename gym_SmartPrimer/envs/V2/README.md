@@ -19,7 +19,7 @@ The observation space consists of the following variables:
 * Seconds after last interaction with the bot
 * Anxiety score
 
-Before every moment the bot has to decide an action, the observation space is updated, see [here](gym_SmartPrimer/envs/V2/Realistic/NextObservation.py).
+Before every moment the bot has to decide an action, the observation space is updated, see [here](Realistic/NextObservation.py).
 
 ### Reward
 The reward is currently defined as the post-pre score, unless the child quits, the reward then is -2. The post
