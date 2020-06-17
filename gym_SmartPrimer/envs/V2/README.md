@@ -29,7 +29,7 @@ The child will do the post-test if he/she finished the fourth sub-question. A ch
 and the number of needed timesteps is 0. How many hints/encouragements/seconds a child needs can be customly defined (see 'how to use').
 
 ## How to use
-First clone the repo. See [example baseline](../../examples/exampleBaseline.py) and [example PPO](gym_SmartPrimer/examples/examplePPO.py) for examples of how to use the enviornment.
+First clone the repo. See [example baseline](../../examples/exampleBaseline.py) and [example PPO](../../examples/examplePPO.py) for examples of how to use the enviornment.
 
 You can set the types of children by editing the [children config file](Realistic/childConfig.json). The parameters in this file are defined to be the following:
 
@@ -46,7 +46,7 @@ hint or encouragement.
 hint or encouragement.
 * probWrongAnswer: The probability that a child gives the wrong answer, given that he does not give the correct answer (list of int, size nTypes).
 
-You can set the settings of PPO here [PPO settings](gym_SmartPrimer/agents/ppoSmartPrimer_config.json).
+You can set the settings of PPO here [PPO settings](../../agents/ppoSmartPrimer_config.json).
 
 To use, you first create the environment:
 
