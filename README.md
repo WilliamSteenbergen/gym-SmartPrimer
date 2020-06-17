@@ -21,7 +21,7 @@ There are four different environments in V1, and one in V2. It is recommended to
 
 One can run any of these environments by cloning this repo and then loading the environment with:
 
-####For V1:
+#### For V1:
 
 `gym.make('gym_SmartPrimer:SmartPrimer-deterministic-v1')` (for deterministic)
 
@@ -31,7 +31,7 @@ One can run any of these environments by cloning this repo and then loading the 
 
 `gym.make('gym_SmartPrimer:SmartPrimer-dynamic-v1')` (for realistic/dynamic children)
 
-####For V2:
+#### For V2:
 
 `gym.make('gym_SmartPrimer:SmartPrimer-realistic-v2')` (for realistic/dynamic children)
 
