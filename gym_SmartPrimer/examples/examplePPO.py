@@ -13,7 +13,7 @@ import json
 #file in gym_SmartPrimer/agents/. Copy that file and place it into the rlraph/agents directory, under
 # the name 'ppo_agent' (replace the old one)
 
-np.random.seed(1)
+np.random.seed(2)
 
 agent_config_path = 'ppoSmartPrimer_config.json' #configure the settings in this file
 with open(agent_config_path, 'rt') as fp:
@@ -21,7 +21,7 @@ with open(agent_config_path, 'rt') as fp:
 
 env = OpenAIGymEnv.from_spec({
         "type": "openai",
-        "gym_env": 'gym_SmartPrimer:SmartPrimer-realistic-v0'
+        "gym_env": 'gym_SmartPrimer:SmartPrimer-realistic-v2'
     })
 
 agent = Agent.from_spec(
@@ -44,8 +44,4 @@ worker = SingleThreadedWorker(env_spec=lambda: env, agent=agent, render=False, w
 # Use exploration is true for training, false for evaluation.
 worker.execute_episodes(1000, use_exploration=True)
 
-env.render()
-
-
-
-
+env.gym_env.render()
