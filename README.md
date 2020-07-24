@@ -1,6 +1,6 @@
 # Smartprimer simulation environment
 
-This repository contains an OpenAI gym environment for simulating high school children that try to solve a problem and
+This repository contains an OpenAI gym environment for simulating children that try to solve a problem and
 learn a task. The goal of an algorithm in this simulation is to generate hints for the child that correspond to the
 hints the child needs. The children will react to hints with words, or will finish or quit the exercise. Before the
 children start the exercise, the will make a pre-test. After the children are finished, they make a post-test. The
